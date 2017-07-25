@@ -53,7 +53,7 @@ Position Find(ElementType X, List L)
 	P = L->Next;
 	while (P != NULL && P->Element != X)
 		P = P->Next;
-	
+
 	return P;
 
 }
@@ -76,7 +76,7 @@ void Delete(ElementType X, List L)
 	Position P, TmpCell;
 	P = L->Next;
 	P = FindPrevious(X, L);
-	
+
 	if (!IsLast(P, L))
 	{
 		TmpCell = P->Next;
@@ -86,23 +86,23 @@ void Delete(ElementType X, List L)
 }
 
 // 插入新节点
-void Insert(ElementType X, List L, Position P)
+Position Insert(ElementType X, List L, Position P)
 {
 	Position TmpCell;
 	TmpCell = malloc(sizeof(struct Node));
 	TmpCell->Element = X;
 	TmpCell->Next = P->Next;
 	P->Next = TmpCell;
-	
+	return TmpCell;
 }
 
 // 删除链表
 void DeleteList(List L)
 {
-	Position P=L->Next;
+	Position P = L->Next;
 	L->Next = NULL;
 
-	while (P!=NULL)
+	while (P != NULL)
 	{
 		free(P);
 		P = P->Next;
@@ -118,8 +118,8 @@ Position Header(List L)
 // 返回第一个节点的指针
 Position First(List L)
 {
-	
-	return L==NULL?NULL:L->Next;
+
+	return L == NULL ? NULL : L->Next;
 }
 
 // 返回下一节点
@@ -138,7 +138,7 @@ ElementType Retrieve(Position P)
 Position ReverseList(List L)
 {
 	List reverse = (List)malloc(sizeof(struct Node));
-	Position p,tmp;
+	Position p, tmp;
 	p = L->Next;
 	reverse->Next = NULL;
 
@@ -151,4 +151,23 @@ Position ReverseList(List L)
 		p = p->Next;
 	}
 	return reverse;
+}
+
+// 打印链表
+void PrintList(List L)
+{
+	Position p = L->Next;
+	while (p != NULL)
+	{
+		printf("%d", p->Element);
+		p = p->Next;
+		if (p != NULL)
+		{
+			printf("->");
+		}
+		else
+		{
+			printf("\n");
+		}
+	}
 }
