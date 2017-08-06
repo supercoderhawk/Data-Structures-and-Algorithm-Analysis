@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{1EB32329-6125-438A-843C-262DA9F2C3C9}</ProjectGuid>
-    <RootNamespace>chapter3</RootNamespace>
+    <ProjectGuid>{B4A2D101-C04E-477E-A921-E4C7B0B11F47}</ProjectGuid>
+    <RootNamespace>chapter4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -117,23 +117,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="double_list.c" />
-    <ClCompile Include="examples.c" />
-    <ClCompile Include="exercise.c" />
-    <ClCompile Include="exercise_test.c" />
-    <ClCompile Include="list.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="queue.c" />
-    <ClCompile Include="stack.c" />
+    <ClInclude Include="avltree.h" />
+    <ClInclude Include="btree.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="tree_test.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="double_list.h" />
-    <ClInclude Include="examples.h" />
-    <ClInclude Include="exercise.h" />
-    <ClInclude Include="list.h" />
-    <ClInclude Include="exercise_test.h" />
-    <ClInclude Include="queue.h" />
-    <ClInclude Include="stack.h" />
+    <ClCompile Include="avltree.c" />
+    <ClCompile Include="btree.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="tree.c" />
+    <ClCompile Include="tree_test.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

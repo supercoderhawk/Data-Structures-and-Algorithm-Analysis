@@ -88,6 +88,8 @@ void Delete(ElementType X, List L)
 // 插入新节点
 Position Insert(ElementType X, List L, Position P)
 {
+	if (P == NULL)
+		return NULL;
 	Position TmpCell;
 	TmpCell = malloc(sizeof(struct Node));
 	TmpCell->Element = X;
@@ -96,17 +98,21 @@ Position Insert(ElementType X, List L, Position P)
 	return TmpCell;
 }
 
-// 删除链表
+// 删除链表，包括头结点
 void DeleteList(List L)
 {
-	Position P = L->Next;
+	if (L == NULL)
+		return;
+	Position P = L->Next, Tmp;
 	L->Next = NULL;
 
 	while (P != NULL)
 	{
+		Tmp = P->Next;
 		free(P);
-		P = P->Next;
+		P = Tmp;
 	}
+	free(L);
 }
 
 // 返回头指针
